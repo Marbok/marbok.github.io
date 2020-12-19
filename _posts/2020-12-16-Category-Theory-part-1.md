@@ -9,7 +9,7 @@ categories: [Category theory]
 Each category consists of *objects* and *morthisms*. ***Object*** is a basic element, like physical point mass. And ***morthisms*** is a mapping or transformation function between objects. Each morthism have source and target objects.  
 <img src="/images/category_theory_part1/simple_category.png" />
 Then _**category**_ is a graph, which has next properties:
-1. *Binary operation.* If there are morthisms f:a&#x27f6;b and g:b&#x27f6;c, then there is g&#9900;f or "g after f".
+1. *Binary operation.* If there are morthisms f:a&#x27f6;b and g:b&#x27f6;c, then there is morthism g&#9900;f or "g after f".
 2. *Associativity.* If f:a&#x27f6;b, g:b&#x27f6;c and h:c&#x27f6;d, then f&#9900;(g&#9900;h) = (f&#9900;g)&#9900;h.
 3. *Identity.* For every object x, there exists a morphism 1<sub>x</sub>:x&#x27f6;x called the identity morphism for x, such that for every morphism f:a&#x27f6;b, we have 1<sub>b</sub>&#9900;f = f = f&#9900;1<sub>a</sub>.
 
