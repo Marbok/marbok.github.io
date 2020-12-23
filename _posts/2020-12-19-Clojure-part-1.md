@@ -17,7 +17,7 @@ Clojure has a infix notation. For instance:
 ```
 
 ## Data types in Clojure. 
-This language use type from Java, because we have:
+This language use type from Java, then we have:
 
 | data in Clojure | type in Java / description |
 |-----------------|--------------|
