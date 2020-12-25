@@ -19,7 +19,7 @@ For instance, natural numbers with zero form a monoid under addition. Associativ
 The neutral element is zero, because: 0 + a = a and a + 0 = a.
 
 In Haskell we have a class Monoid:
-```
+``` sql
 class Monoid m where
     mempty :: m
     mappend :: m -> m -> m
@@ -27,7 +27,7 @@ class Monoid m where
 where *mempty* - neutral element, and *mappend* - binary operation.
 
 For instance, String like monoid:
-```
+``` sql
 instance Monoid String where
     mempty = ""
     mappend = (++)
