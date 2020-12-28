@@ -94,3 +94,48 @@ Records are a more optimized way of structuring data.
 
 (format (Cal. 12 2 2020)) ;; return "12.2.2020"
 ```
+
+## Work with Java
+``` clojure
+(import '[java.io File]) ;; like import in java
+
+(File. "." "calling_java.clj") ;; create object
+
+(.toUpperCase "abc") ;; invoke method
+
+(Math/sqrt 25) ;; static method
+
+Math/PI ;; constant
+
+(deftype Struct [a b c])
+(.-a (Struct. 1 2 3)) ;; get field
+(set! (.-a x) 5)      ;; set field
+
+(doto (java.util.HashMap.) ;; like ->, but
+  (.put "a" 1)             ;; for mutable object
+  (.put "b" 2))
+
+(defn strlen [^String s]  ;; type hint
+  (.length s))
+
+
+(import '[java.util ArrayList Collection COmparator
+                    Timer TImerTask])
+
+;; use reify for implement interface
+(let [arr (ArrayList. [3 2 4 1])
+      dir -1
+      comp (reify Comparator
+             (compare [this a b]
+               (* dir (- b a))))]
+  (Collection/sort arr comp)
+  arr) ;; return [1 2 3 4]
+
+;; use proxy for inherit
+;; (proxy [SuperClass Ifaces ...] [constructor-args]
+;;    (method [args] ...))
+(let [task (proxy [TimerTask] []  ;; prints a random number 
+             (run []              ;; in a second
+               (println (rand))))
+  (.schedule (Timer.) task 1000)])
+```
