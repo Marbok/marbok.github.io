@@ -75,7 +75,7 @@ Records are a more optimized way of structuring data.
 (:x p)               ;; record has map's interface
 (assoc p :x 20)
 (:z (assoc p :z 10))
-(= (PointR. 10 10) (PointR. 10 10)) ;; work only with records and map
+(= (PointR. 10 10) (PointR. 10 10)) ;; work only with records, not with deftype
 
 
 (defprotocol IFormat 
@@ -154,7 +154,7 @@ This is a special file's format on base Clojure syntax, like Json.
 
 ## Metadata
 
-We can add a map with arbitrary data to any object. This's hits for compiler:
+We can add a map with arbitrary data to any object. This's hints for compiler:
 ``` clojure
 (def m {:s 2})
 (with-meta m {:doc "123"}) ;; write meta
