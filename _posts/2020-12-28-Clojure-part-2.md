@@ -139,3 +139,31 @@ Math/PI ;; constant
                (println (rand))))
   (.schedule (Timer.) task 1000)])
 ```
+
+## Extention data notion (EDN)
+
+This is a special file's format on base Clojure syntax, like Json.
+
+``` clojure
+(pr-str {:a 1}) ;; serialization
+(read-string "{:a 1}")  ;; deserialization
+
+(require 'clojure.edn)
+(clojure.edn/read-string (slurp "f.edn")) ;; more safer serialization
+```
+
+## Metadata
+
+We can add a map with arbitrary data to any object. This's hits for compiler:
+``` clojure
+(def m {:s 2})
+(with-meta m {:doc "123"}) ;; write meta
+(meta m)    ;; read meta
+
+;; offen used meta:
+(def ^:private x 0)
+(def ^:dynamic x 0)
+(def ^:const x 0)
+
+;; function doc and type hints are metadata too 
+```
