@@ -10,9 +10,10 @@ I had a small task - run container with parameters:
 4. The `/var/log/nginx` directory inside the container must be mounted to the `/data/nginx/logs` directory on the host system
 5. When starting the container, the environment variable `logging` = `true` should be added
 
-Complite instruction for starting the container:
-```
-docker run -d --name web -p 9099:80 -v /data/nginx/logs:/var/log/nginx -e logging=true nginx:latest
+Complete instruction for starting the container:
+```bash
+docker run -d --name web -p 9099:80 -v /data/nginx/logs:/var/log/nginx \
+           -e logging=true nginx:latest
 ```
 
 Explanation:
