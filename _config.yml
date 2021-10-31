@@ -98,3 +98,13 @@ exclude:
   - README.md
   - CNAME
 
+defaults:
+  - scope:
+      path: google89babca0122b657d.html
+    values:
+      sitemap: false
+
+  - scope:
+      path: yandex_e36680167b9687f5.html
+    values:
+      sitemap: false
