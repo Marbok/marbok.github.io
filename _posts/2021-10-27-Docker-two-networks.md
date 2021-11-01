@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker. Container and two networks.
-categories: [Docker, Task]
+categories: [Docker]
 ---
 This is a small hint for the case when you need to connect a container to two networks.
 Example:

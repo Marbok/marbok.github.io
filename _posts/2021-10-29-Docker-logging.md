@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker. Logging.
-categories: [Docker, Task]
+categories: [Docker]
 ---
 Experiment with Docker continue!
 Now I need to configure logs using [Fluentd](https://en.wikipedia.org/wiki/Fluentd).

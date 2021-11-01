@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker. Run Container.
-categories: [Docker, Task]
+categories: [Docker]
 ---
 I had a small task - run container with parameters:
 1. Name is `web`
