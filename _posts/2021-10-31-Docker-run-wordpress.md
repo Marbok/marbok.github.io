@@ -63,4 +63,4 @@ And that's all!
 
 If we go to the address localhost:80, we will see the wordpress start panel.
 I think it's not comfortable to run multiple linked containers using only Docker.
-In the next article I'll show you how the guys form "Docker, Inc." solved this problem.
+In [the next article](/Docker-compose-wordpress) I'll show you how the guys form "Docker, Inc." solved this problem.
