@@ -118,7 +118,7 @@ services:
       - "8080:8080"
     environment:
       # this vars is used in application
-      HOST_PORT: 8080
+      HTTP_PORT: 8080
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/blog
       SPRING_DATASOURCE_USERNAME: bloguser
       SPRING_DATASOURCE_PASSWORD: blogpass
