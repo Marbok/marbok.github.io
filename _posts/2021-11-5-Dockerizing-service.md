@@ -51,6 +51,9 @@ WORKDIR /blog-ui
 # copy all files in directory in container
 COPY . .
 
+# create argument for build
+ARG REACT_APP_HOST
+
 # build application
 RUN npm run build
 
@@ -66,16 +69,19 @@ RUN rm -rf /usr/share/nginx/html/*
 # copy new static files in nginx
 COPY --from=builder /blog-ui/build /usr/share/nginx/html
 
-# say docker, that we use this ports
+# say docker, that we use next ports
 EXPOSE 80
 
 # run nginx in container
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
+`ARG REACT_APP_HOST` is unobvious command. When we use environment variables in frontend, we don't have its in runtime. Build system replaces this vars in code on values. Therefore, we will not be able to use the usual environment variables in 'docker-compose.yaml`, as we did in the last [article](/Docker-compose-wordpress).
+
 Let's describe the architecture of containers:
 1. Run frontend:
     - build image
+    - set url on back service.
     - mapping port 80 to 3000
 2. Run backend:
     - build image
@@ -125,7 +131,10 @@ services:
       JWT_SECRET: test
 
   front:
-    build: front/ # docker create image form this directory
+    build:
+      context: front/ # docker create image form this directory
+      args:
+        REACT_APP_HOST: localhost:8080 # use args for pass url on backend
     ports:
       - "3000:80"
 
