@@ -147,7 +147,7 @@ volumes:
 ```
 
 And when we run command: `docker-compose up --build` - docker start our application.
-All code is [here](https://github.com/Marbok/blog-engine).
+All code is [here](https://github.com/Marbok/blog-engine/tree/v.1).
 
 ## A series of articles about docker:
 1. [Docker. Run Container.](/Docker-small-task)
